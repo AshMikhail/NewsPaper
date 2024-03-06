@@ -1,28 +1,34 @@
-<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
 
 {% load custom_filters %}
 
 {% block title %}
-all_news
+search
 {% endblock title %}
 
 
 {% block content %}
-    <h1>Все Новости</h1>
-    <h1>Всего новостей: {{ all_news|length }}</h1>
+    <h1>Поиск новостей</h1>
+    <h1>Всего новостей: {{ search|length }}</h1>
     <hr>
-    {% if all_news %}
+    <form action="" method="get">
+       {{ filterset.form.as_p }}
+       {# Добавим кнопку отправки данных формы #}
+       <input type="submit" value="Найти" />
+   </form>
+    <hr>
+{% if not request.GET %}
+    <h2>Введите данные для поиска</h2>
+{% else %}
+    {% if search %}
         <table>
             <tr>
-                <td>id</td>
                 <td>Заголовок</td>
                 <td>Дата публикации</td>
                 <td>Превью</td>
             </tr>
-            {% for Post in all_news %}
+            {% for Post in search %}
             <tr>
-                <td>{{ Post.pk }}</td>
                 <td>{{ Post.title|censor }}</td>
                 <td>{{ Post.dateCreation|date:'d M Y' }}</td>
                 <td>{{ Post.text|truncatewords:20|censor }}</td>
@@ -32,6 +38,7 @@ all_news
     {% else %}
         <h2>Отсутствие новостей, тоже хорошая новость!</h2>
     {% endif %}
+{% endif %}
 
     {% if page_obj.has_previous %}
        <a href="?page=1">1</a>
