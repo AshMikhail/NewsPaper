@@ -12,20 +12,34 @@ all_news
     <h1>Все Новости</h1>
     <h1>Всего новостей: {{ all_news|length }}</h1>
     <hr>
+    {% if perms.news.add_post %}
+    <a href="{% url 'news_create' %}">Добавить Новость</a>
+    <a href="{% url 'article_create' %}">Добавить Статью</a>
+    {% endif %}
+
     {% if all_news %}
         <table>
             <tr>
-                <td>id</td>
                 <td>Заголовок</td>
                 <td>Дата публикации</td>
                 <td>Превью</td>
+                {% if perms.news.change_post or perms.news.delete_post %}
+                <td>Действия</td>
+                {% endif %}
             </tr>
             {% for Post in all_news %}
             <tr>
-                <td>{{ Post.pk }}</td>
-                <td>{{ Post.title|censor }}</td>
+                <td><a href="{% url 'post_detail' Post.pk %}"> {{ Post.title|censor }}</a></td>
                 <td>{{ Post.dateCreation|date:'d M Y' }}</td>
                 <td>{{ Post.text|truncatewords:20|censor }}</td>
+                <td>
+                    {% if perms.news.change_post %}
+                    <a href="{% url 'news_edit' pk=Post.id %}">Изменить</a>
+                    {% endif %}
+                    {% if perms.news.delete_post %}
+                    <a href="{% url 'news_delete' Post.id %}">Удалить</a>
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </table>

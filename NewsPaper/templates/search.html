@@ -13,7 +13,6 @@ search
     <hr>
     <form action="" method="get">
        {{ filterset.form.as_p }}
-       {# Добавим кнопку отправки данных формы #}
        <input type="submit" value="Найти" />
    </form>
     <hr>
@@ -26,12 +25,23 @@ search
                 <td>Заголовок</td>
                 <td>Дата публикации</td>
                 <td>Превью</td>
+                {% if perms.news.change_post or perms.news.delete_post %}
+                <td>Действия</td>
+                {% endif %}
             </tr>
             {% for Post in search %}
             <tr>
-                <td>{{ Post.title|censor }}</td>
+                <td><a href="{% url 'post_detail' Post.pk %}"> {{ Post.title|censor }}</a></td>
                 <td>{{ Post.dateCreation|date:'d M Y' }}</td>
                 <td>{{ Post.text|truncatewords:20|censor }}</td>
+                <td>
+                    {% if perms.news.change_post %}
+                    <a href="{% url 'news_edit' pk=Post.id %}">Изменить</a>
+                    {% endif %}
+                    {% if perms.news.delete_post %}
+                    <a href="{% url 'news_delete' Post.id %}">Удалить</a>
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </table>
