@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'news',
     'accounts',
     'django_filters',
+    'django_apscheduler',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -135,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -155,3 +156,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [ BASE_DIR / "static" ]
 
 LOGIN_REDIRECT_URL = "/news"
+
+SITE_URL = 'http://127.0.0.1:8000'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = "NewsPaper@yandex.ru"
+# EMAIL_HOST_PASSWORD = "12345678"
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
+#
+# DEFAULT_FROM_EMAIL = "NewsPaper@yandex.ru"
+#
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'M-A-Ash'
+EMAIL_HOST_PASSWORD = 'wneezmjpjryxmvyj'
+EMAIL_USE_SSL = True
+
+# Магазинус будет отображатся в письме админам и менеджерам
+# по умолчанию [Django]
+DEFAULT_FROM_EMAIL = 'M-A-Ash@yandex.ru'
