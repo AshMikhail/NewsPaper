@@ -158,6 +158,8 @@ STATICFILES_DIRS = [ BASE_DIR / "static" ]
 LOGIN_REDIRECT_URL = "/news"
 
 SITE_URL = 'http://127.0.0.1:8000'
+
+# Вывод в консоль
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST = 'smtp.yandex.ru'
 # EMAIL_PORT = 465
@@ -165,15 +167,14 @@ SITE_URL = 'http://127.0.0.1:8000'
 # EMAIL_HOST_PASSWORD = "12345678"
 # EMAIL_USE_TLS = False
 # EMAIL_USE_SSL = True
-#
 # DEFAULT_FROM_EMAIL = "NewsPaper@yandex.ru"
+# EMAIL_SUBJECT_PREFIX = '[NewsPaper] '
 #
+# Отправка на почту
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'M-A-Ash'
 EMAIL_HOST_PASSWORD = 'wneezmjpjryxmvyj'
 EMAIL_USE_SSL = True
-
-# Магазинус будет отображатся в письме админам и менеджерам
-# по умолчанию [Django]
+EMAIL_SUBJECT_PREFIX = '[NewsPaper] '
 DEFAULT_FROM_EMAIL = 'M-A-Ash@yandex.ru'
