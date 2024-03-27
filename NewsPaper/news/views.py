@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_protect
 from .models import Post, Subscriber, Category
 from .filters import PostFilter
 from .forms import PostForm
+from .tasks import new_post_email
 
 
 class PostList(ListView):
@@ -56,6 +57,8 @@ class PostCreate(PermissionRequiredMixin, CreateView):
             post.categoryType = 'NW'
         else:
             post.categoryType = 'AR'
+        post.save()
+        new_post_email.delay(post.pk)
         return super().form_valid(form)
 
 

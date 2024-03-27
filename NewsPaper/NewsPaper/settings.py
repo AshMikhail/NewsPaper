@@ -178,3 +178,9 @@ EMAIL_HOST_PASSWORD = 'wneezmjpjryxmvyj'
 EMAIL_USE_SSL = True
 EMAIL_SUBJECT_PREFIX = '[NewsPaper] '
 DEFAULT_FROM_EMAIL = 'M-A-Ash@yandex.ru'
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
