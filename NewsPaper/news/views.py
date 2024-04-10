@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Exists, OuterRef
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
+from django.core.cache import cache
 
 from .models import Post, Subscriber, Category
 from .filters import PostFilter
@@ -43,6 +44,14 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'news.html'
     context_object_name = 'news'
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'Post-{self.kwargs["pk"]}', None)
+        print(f'before if {obj}')
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'Post-{self.kwargs["pk"]}', obj)
+            print(f'after if {obj.title}')
+            return obj
 
 
 class PostCreate(PermissionRequiredMixin, CreateView):

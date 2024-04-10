@@ -10,7 +10,10 @@ all_news
 
 {% block content %}
     <h1>Все Новости</h1>
+{% load cache %}
+{% cache 30 all_news %}
     <h1>Всего новостей: {{ all_news|length }}</h1>
+{% endcache %}
     <hr>
     {% if perms.news.add_post %}
     <a href="{% url 'news_create' %}">Добавить Новость</a>

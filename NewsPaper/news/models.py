@@ -1,3 +1,5 @@
+from django.core.cache import cache
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum
@@ -59,6 +61,9 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete(f'Post-{self.pk}')
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
