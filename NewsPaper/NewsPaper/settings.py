@@ -178,6 +178,11 @@ EMAIL_HOST_PASSWORD = 'wneezmjpjryxmvyj'
 EMAIL_USE_SSL = True
 EMAIL_SUBJECT_PREFIX = '[NewsPaper] '
 DEFAULT_FROM_EMAIL = 'M-A-Ash@yandex.ru'
+SERVER_EMAIL = "M-A-Ash@yandex.ru"
+
+ADMINS = (
+    ('Mike', 'yasentcev@yandex.ru'),
+)
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
@@ -185,9 +190,123 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
+
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
     }
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'loggers': {
+        'django': {
+            'handlers': ['debug_console', 'warning_console', 'error_console', 'file_general_log'],
+            'propagate': True,
+            'level': 'DEBUG',
+        },
+        'django.request': {
+            'handlers': ['error_file', 'send_mail'],
+            'propagate': True,
+            'level': 'ERROR'
+        },
+        'django.server': {
+            'handlers': ['error_file', 'send_mail'],
+            'propagate': True,
+            'level': 'ERROR'
+        },
+        'django.template': {
+            'handlers': ['error_file'],
+            'propagate': True,
+            'level': 'ERROR'
+        },
+        'django.db.backends': {
+            'handlers': ['error_file'],
+            'propagate': True,
+            'level': 'ERROR'
+        },
+        'django.security': {
+            'handlers': ['file_security'],
+            'propagate': True,
+            'level': 'DEBUG'
+        },
+
+    },
+    'formatters': {
+        'debug_console': {
+            'format': '[{asctime} - {levelname} - {message}]',
+            'style': '{',
+        },
+        'warning_console': {
+            'format': '[{asctime} - {levelname} - {pathname} - {message}]',
+            'style': '{',
+        },
+        'error_&_critical': {
+            'format': '[{asctime} - {levelname} - {pathname} - {exc_info} - {message}]',
+            'style': '{',
+        },
+        'general_&_security_log': {
+            'format': '[{asctime} - {levelname} - {module} - {message}]',
+            'style': '{',
+        },
+
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'debug_console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'debug_console',
+            'filters': ['require_debug_true'],
+        },
+        'warning_console': {
+            'level': 'WARNING',
+            'class': 'logging.StreamHandler',
+            'formatter': 'warning_console',
+            'filters': ['require_debug_true'],
+        },
+        'error_console': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+            'formatter': 'error_&_critical',
+            'filters': ['require_debug_true'],
+        },
+        'file_general_log': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'general_&_security_log',
+            'filename': 'general.log',
+            'filters': ['require_debug_false'],
+        },
+        'error_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'formatter': 'error_&_critical',
+            'filename': 'errors.log'
+        },
+
+        'file_security': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'formatter': 'general_&_security_log',
+            'filename': 'security.log'
+        },
+        'send_mail': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'warning_console',
+        }
+    },
+}
+

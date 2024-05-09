@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="news.author" pk="1">
+    <field name="authorUser" rel="OneToOneRel" to="auth.user">1</field>
+    <field name="ratingAuthor" type="SmallIntegerField">6</field>
+  </object>
+  <object model="news.author" pk="2">
+    <field name="authorUser" rel="OneToOneRel" to="auth.user">2</field>
+    <field name="ratingAuthor" type="SmallIntegerField">5</field>
+  </object>
+  <object model="news.category" pk="1">
+    <field name="name" type="CharField">Собачье сердце</field>
+  </object>
+  <object model="news.category" pk="2">
+    <field name="name" type="CharField">Категория 2</field>
+  </object>
+  <object model="news.category" pk="3">
+    <field name="name" type="CharField">Категория 3</field>
+  </object>
+  <object model="news.category" pk="4">
+    <field name="name" type="CharField">Категория 4</field>
+  </object>
+  <object model="news.post" pk="1">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-02-20T15:36:57.070741+00:00</field>
+    <field name="title" type="CharField">Заглавие 1</field>
+    <field name="text" type="TextField">Дверь из кабинета пропустила Филиппа Филипповича. Он вышел в известном всем лазоревом халате и тут же все могли убедиться сразу, что Филипп Филиппович очень поправился в последнюю неделю. Прежний властный и энергичный Филипп Филиппович, полный достоинства, предстал перед ночными гостями и извинился, что он в халате.</field>
+    <field name="rating" type="SmallIntegerField">1</field>
+  </object>
+  <object model="news.post" pk="2">
+    <field name="author" rel="ManyToOneRel" to="news.author">2</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-02-20T15:46:01.233553+00:00</field>
+    <field name="title" type="CharField">Заглавие 2</field>
+    <field name="text" type="TextField">– Не стесняйтесь, профессор, – очень смущённо отозвался человек в штатском, затем он замялся и заговорил. – Очень неприятно. У нас есть ордер на обыск в вашей квартире и, – человек покосился на усы Филиппа Филипповича и докончил, – и арест, в зависимости от результата.</field>
+    <field name="rating" type="SmallIntegerField">2</field>
+  </object>
+  <object model="news.post" pk="3">
+    <field name="author" rel="ManyToOneRel" to="news.author">2</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-02-20T15:52:33.548672+00:00</field>
+    <field name="title" type="CharField">Новость от второго автора</field>
+    <field name="text" type="TextField">Тут должен быть текст новости!</field>
+    <field name="rating" type="SmallIntegerField">1</field>
+  </object>
+  <object model="news.post" pk="4">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-04T15:07:08.730300+00:00</field>
+    <field name="title" type="CharField">Новая статья для проверки</field>
+    <field name="text" type="TextField">Новая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверкиНовая статья для проверки</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="5">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-05T15:37:37.283480+00:00</field>
+    <field name="title" type="CharField">Test News "NW"</field>
+    <field name="text" type="TextField">Должна получится новость.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="6">
+    <field name="author" rel="ManyToOneRel" to="news.author">2</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-05T15:39:14.279981+00:00</field>
+    <field name="title" type="CharField">Test Article "AR"</field>
+    <field name="text" type="TextField">Должна получится статья.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="7">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-19T14:47:28.394834+00:00</field>
+    <field name="title" type="CharField">Глава X – Эпилог</field>
+    <field name="text" type="TextField">Ночь в ночь через десять дней после сражения в смотровой в квартире профессора Преображенского, что в Обуховском переулке, ударил резкий звонок.
+
+— Уголовная милиция и следователь. Благоволите открыть.
+
+Забегали шаги, застучали, стали входить, и в сверкающей от огней приемной с заново застекленными шкафами оказалось масса народу. Двое в милицейской форме, один в черном пальто, с портфелем, злорадный и бледный председатель Швондер, юноша-женщина, швейцар Федор, Зина, Дарья Петровна и полуодетый Борменталь, стыдливо прикрывающий горло без галстука.
+
+Дверь из кабинета пропустила Филиппа Филипповича. Он вышел в известном всем лазоревом халате и тут же все могли убедиться сразу, что Филипп Филиппович очень поправился в последнюю неделю. Прежний властный и энергичный Филипп Филиппович, полный достоинства, предстал перед ночными гостями и извинился, что он в халате.
+
+— Не стесняйтесь, профессор, — очень смущенно отозвался человек в штатском, затем он замялся и заговорил. — Очень неприятно. У нас есть ордер на обыск в вашей квартире и, — человек покосился на усы Филиппа Филипповича и докончил, — и арест, в зависимости от результата.
+
+Филипп Филиппович прищурился и спросил:
+
+— А по какому обвинению, смею спросить, и кого?
+
+Человек почесал щеку и стал вычитывать по бумажке из портфеля.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="8">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-19T14:50:03.785871+00:00</field>
+    <field name="title" type="CharField">Глава X – Эпилог part 2</field>
+    <field name="text" type="TextField">— По обвинению Преображенского, Борменталя, Зинаиды Буниной и Дарьи Ивановой в убийстве заведующего подотделом очистки МКХ Полиграфа Полиграфовича Шарикова.
+
+Рыдания Зины покрыли конец его слов. Произошло движение.
+
+— Ничего я не понимаю, — ответил Филипп Филиппович, королевски вздергивая плечи, — какого такого Шарикова? Ах, виноват, этого моего пса… Которого я оперировал?
+
+— Простите, профессор, не пса, а когда он уже был человеком. Вот в чем дело.
+
+— То-есть он говорил? — Спросил Филипп Филиппович, — это еще не значит быть человеком. Впрочем, это не важно. Шарик и сейчас существует, и никто его решительно не убивал.
+
+— Профессор, — очень удивленно заговорил черный человек поднял брови, — тогда его придеться предьявить. Десятый день, как пропал, а данные, извините меня, очень нехорошие.
+
+— Доктор Борменталь, благоволите предьявить Шарика следователю, приказал Филипп Филиппович, овладевая ордером.
+
+Доктор Борменталь, криво улыбнувшись, вышел.
+
+Когда он вернулся и посвистал, за ним из двери кабинета выскочил пес странного качества. Пятнами он был лыс, пятнами на нем отрастала шерсть вышел он, как ученый циркач, на задних лапах, потом опустился на все четыре и осмотрелся. Гробовое молчание застыло в приемной, как желе. Кошмарного вида пес с багровым шрамом на лбу вновь поднялся на задние лапы и, улыбнувшись, сел в кресло.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="9">
+    <field name="author" rel="ManyToOneRel" to="news.author">2</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-19T14:51:20.242121+00:00</field>
+    <field name="title" type="CharField">Глава X – Эпилог part 3</field>
+    <field name="text" type="TextField">Второй милиционер вдруг перекрестился размашистым крестом и, отступив, сразу отдавил Зине обе ноги.
+
+Человек в черном, не закрывая рта, выговорил такое:
+
+— Как же, позвольте?.. Он служил в очистке…
+
+— Я его туда не назначал, — ответил Филипп Филиппович, — ему господин Швондер дал рекомендацию, если я не ошибаюсь.
+
+— Я ничего не понимаю, — растерянно сказал черный и обратился к первому милиционеру. — Это он?
+
+— Он, — беззвучно ответил милицейский. — Форменно он.
+
+— Он самый, — послышался голос Федора, — только, сволочь, опять оброс.
+
+— Он же говорил… Кхе… Кхе…
+
+— И сейчас еще говорит, но только все меньше и меньше, так что пользуйтесь случаем, а то он скоро совсем умолкнет.
+
+— Но почему же? — Тихо осведомился черный человек.
+
+Филипп Филиппович пожал плечами.
+
+— Наука еще не знает способов обращать зверей в людей. Вот я попробовал да только неудачно, как видите. Поговорил и начал обращаться в первобытное состояние. Атавизм.
+
+— Неприличными словами не выражаться, — вдруг гаркнул пес с кресла и встал.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="10">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-19T15:23:24.045112+00:00</field>
+    <field name="title" type="CharField">Глава I part 1</field>
+    <field name="text" type="TextField">У-у-у-у-у-у-гу-гугу-уу! О, гляньте, гляньте на меня, я погибаю! Вьюга в подворотне ревет мне отходную, и я вою с нею. Пропал я, пропал! Негодяй в грязном колпаке – повар столовой нормального питания служащих Центрального Совета Народного Хозяйства – плеснул в меня кипятком и обварил мне левый бок. Какая гадина, а еще пролетарий! Господи, боже мой, как больно! До костей проело кипяточком. Я теперь вою, вою, вою, да разве воем поможешь?
+
+Чем я ему помешал? Чем? Неужели я обожру Совет Народного Хозяйства, если в помойке пороюсь? Жадная тварь. Вы гляньте когда-нибудь на его рожу: ведь он поперек себя шире. Вор с медной мордой. Ах, люди, люди!</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="11">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-19T15:28:37.668763+00:00</field>
+    <field name="title" type="CharField">Глава I part 2</field>
+    <field name="text" type="TextField">В полдень угостил меня колпак кипятком, а сейчас стемнело, часа четыре приблизительно пополудни, судя по тому, как луком пахнет из пожарной Пречистенской команды. Пожарные ужинают кашей, как вам известно. Но это последнее дело, вроде грибов. Знакомые псы с Пречистенки, впрочем, рассказывали, будто бы на Неглинной в ресторане «Бар» едят дежурное блюдо – грибы, соус пикан, по три рубля семьдесят пять копеек порция. Это дело на любителя – все равно, что калошу лизать... У-у-у-у-у!..
+
+Бок болит нестерпимо, и даль моей карьеры видна мне совершенно отчетливо: завтра появятся язвы, и, спрашивается, чем я их буду лечить? Летом можно смотаться в Сокольники, там есть особенная, очень хорошая трава, и кроме того, наешься бесплатно колбасных головок, бумаги жирной набросают граждане, налижешься. А теперь, зимой, куда же пойдешь? Не били Вас сапогом? Били. Кирпичом по ребрам получали? Кушано достаточно. Все испытал, с судьбою своею мирюсь и плачу сейчас не только от физической боли и холода, а потому что и дух мой уже угасает. Угасает собачий дух!</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="12">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-19T15:45:35.378300+00:00</field>
+    <field name="title" type="CharField">Глава I part 3</field>
+    <field name="text" type="TextField">Вот тело мое, изломанное, битое! Надругались над ним люди достаточно. Ведь главное что – как врезал он кипяточком, под шерсть проело, и защиты, стало быть, для левого бока нет никакой. Я весьма легко могу получить воспаление легких, а получивши его, я, граждане, подохну с голоду. С воспалением легких полагается лежать на парадном ходе под лестницей, а кто же вместо меня, лежащего холостого пса, будет бегать по сорным ящикам в поисках питания? Прохватит легкое, и поползу я на животе, ослабею, и любой спец пришибет меня палкой насмерть. И дворники с бляхами ухватят меня за ноги и выкинут на телегу...
+
+Дворники из всех пролетариев – наигнуснейшая мразь. Человечьи очистки, низшая категория. Повар и тот попадается разный. Например, покойный Влас с Пречистенки. Скольким он жизнь спас! Потому что самое главное во время болезни перехватить кус. И вот, бывало, говорили псы-старожилы, махнет Влас кость, а на ней с осьмушку мяса. Царство ему небесное за то, что был настоящая личность, барский повар графов Толстых, а не из Совета нормального питания. Что они там вытворяют в нормальном питании, ведь уму собачьему непостижимо! Они же, мерзавцы, из вонючей солонины щи варят, а те, бедняги, ничего и не знают. Берут, жрут, лакают.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="13">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-19T15:51:29.471759+00:00</field>
+    <field name="title" type="CharField">Глава I part 4</field>
+    <field name="text" type="TextField">Иная машинисточка получает по девятому разряду четыре с половиной червонца, ну, правда, любовник ей фильдеперсовые чулочки подарит. Да ведь сколько за этот фильдеперс ей издевательств надо вынести! Ведь он ее не каким-нибудь обыкновенным способом, а подвергает французской любви. С… эти французы, между нами говоря. Хоть и лопают богато, и все с красным вином. Да… Прибежит машинисточка, ведь за четыре с половиной червонца в «Бар» не пойдешь. Ей и на кинематограф не хватает, а кинематограф у женщин единственное утешение в жизни.
+
+Дрожит, морщится, а лопает. Подумать только: сорок копеек из двух блюд, а они оба эти блюда, и пятиалтынного не стоят, потому что остальные двадцать пять копеек заведующий хозяйством уворовал. А ей разве такой стол нужен? У нее и верхушка правого легкого не в порядке, и женская болезнь на французской почве, на службе с нее вычли, тухлятинкой в столовой накормили, вон она, вон она!! Бежит в подворотню в любовниковых чулках. Ноги холодные, в живот дует, потому что шерсти на ней нет, а штаны она носит холодные, так, кружевная видимость. Рвань для любовника. Надень-ка она фланелевые, попробуй. Он и заорет: «До чего ты не изящна! Надоела мне моя Матрена, намучился я с фланелевыми штанами, теперь пришло мое времечко. Я теперь председатель, и сколько ни накраду – все, все на женское тело, на раковые шейки, на Абрау-Дюрсо. Потому что наголодался в молодости достаточно, будет с меня, а загробной жизни не существует».</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="14">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-20T10:56:12.448995+00:00</field>
+    <field name="title" type="CharField">Глава I part 5</field>
+    <field name="text" type="TextField">Жаль мне ее, жаль! Но самого себя мне еще больше жаль. Не из эгоизма говорю, о нет, а потому что действительно мы в неравных условиях. Ей-то хоть дома тепло, ну а мне, а мне? Куда пойду? Битый, обваренный, оплеванный, куда же я пойду? У-у-у-у...
+
+– Куть, куть, куть! Шарик, а Шарик? Чего ты скулишь бедняжка? А? Кто тебя обидел?.. Ух...
+
+Ведьма сухая метель загремела воротами и помелом съездила по уху барышню. Юбчонку взбила до колен, обнажила кремовые чулочки и узкую полосочку плохо стиранного кружевного бельишка, задушила слова и замела пса.
+
+– Боже мой!.. Какая погода... Ух... И живот болит. Это солонина, это солонина! И когда все это кончится?
+
+Наклонив голову, бросилась барышня в атаку, прорвалась в ворота, и на улице начало ее вертеть, рвать, раскидывать, потом завинтило снежным винтом, и она пропала.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="15">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">AR</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-26T14:34:38.529300+00:00</field>
+    <field name="title" type="CharField">Глава I part 5</field>
+    <field name="text" type="TextField">А пес остался в подворотне и, страдая от изуродованного бока, прижался к холодной массивной стене, задохся и твердо решил, что больше отсюда никуда не пойдет, тут и сдохнет в подворотне. Отчаяние повалило его. На душе у него было до того больно и горько, до того одиноко и страшно, что мелкие собачьи слезы, как пупырышки, вылезали из глаз и тут же засыхали. Испорченный бок торчал свалявшимися промерзшими комьями, а между ними глядели красные зловещие пятна от вара. До чего бессмысленны, тупы и жестоки повара. «Шарик» – она назвала его! Какой он к черту Шарик! Шарик – это значит круглый, упитанный, глупый, овсянку жрет, сын счастливых родителей, а он лохматый, долговязый и рваный, шляйка поджарая, бездомный пес... Впрочем, спасибо ей на добром слове...
+
+Дверь через улицу в ярко освещенном магазине хлопнула, и из нее показался гражданин. Именно гражданин, а не товарищ, и даже вернее всего – господин. Ближе – яснее – господин. Вы думаете, я сужу по пальто? Вздор. Пальто теперь очень многие и из пролетариев носят. Правда, воротники не такие, об этом и говорить нечего, но все же издали можно спутать. А вот по глазам – тут уж и вблизи и издали не спутаешь. О, глаза – значительная вещь. Вроде барометра. Все видно – у кого великая сушь в душе, кто ни за что ни про что может ткнуть носком сапога в ребра, а кто сам всякого боится. Вот последнего холуя именно и приятно бывает тяпнуть за лодыжку. Боишься – получай. Раз боишься – значит стоишь... Р-р-р... гау-гау...</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="16">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-27T13:28:42.169010+00:00</field>
+    <field name="title" type="CharField">Глава II</field>
+    <field name="text" type="TextField">Учиться читать совершенно ни к чему, когда мясо и так пахнет за версту. Тем не менее (ежели вы проживаете в Москве, и хоть какие-нибудь мозги у вас в голове имеются), вы волей-неволей научитесь грамоте, притом безо всяких курсов. Из сорока тысяч московских псов разве уж какой-нибудь совершенный идиот не сумеет сложить из букв слово "колбаса".</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="17">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-27T13:33:19.635050+00:00</field>
+    <field name="title" type="CharField">Глава II part 2</field>
+    <field name="text" type="TextField">Шарик начал учиться по цветам. Лишь только исполнилось ему четыре месяца, по всей москве развесили зелено-голубые вывески с надписью мспо — мясная торговля. Повторяем, все это ни к чему, потому что и так мясо слышно. И путаница раз произошла: равняясь по голубоватому едкому цвету, Шарик, обоняние которого зашиб бензинным дымом мотор, вкатил вместо мясной в магазин электрических принадлежностей братьев голубизнер на мясницкой улице. Там у братьев пес отведал изолированной проволоки, она будет почище извозчичьего кнута. Этот знаменитый момент и следует считать началом Шариковского образования. Уже на тротуаре тут же Шарик начал соображать, что "голубой" не всегда означает "мясной" и, зажимая от жгучей боли хвост между задними лапами и воя, припомнил, что на всех мясных первой слева стоит золотая или рыжая раскоряка, похожая на санки.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="18">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-27T13:48:07.427820+00:00</field>
+    <field name="title" type="CharField">Глава II part 3</field>
+    <field name="text" type="TextField">Далее, пошло еще успешней. "А" он выучил в "главрыбе" на углу моховой, потом и "б" — подбегать ему было удобнее с хвоста слова "рыба", потому что при начале слова стоял милиционер.
+
+Изразцовые квадратики, облицовывавшие угловые места в москве, всегда и неизбежно означали "сыр". Черный кран от самовара, возглавлявший слово, обозначал бывшего хозяина "чичкина", горы голландского красного, зверей приказчиков, ненавидевших собак, опилки на полу и гнуснейший дурно пахнущий бакштейн.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="19">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-27T13:49:35.821985+00:00</field>
+    <field name="title" type="CharField">Глава II part 4</field>
+    <field name="text" type="TextField">Если играли на гармошке, что было немногим лучше "милой аиды", и пахло сосисками, первые буквы на белых плакатах черезвычайно удобно складывались в слово "неприли…", Что означало "неприличными словами не выражаться и на чай не давать". Здесь порою винтом закипали драки, людей били кулаком по морде, — иногда, в редких случаях, — салфетками или сапогами.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="20">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-27T13:51:07.161675+00:00</field>
+    <field name="title" type="CharField">Глава II part 5</field>
+    <field name="text" type="TextField">Если в окнах висели несвежие окорока ветчины и лежали мандарины… Гау-гау… Га… Строномия.Если темные бутылки с плохой жидкостью… Ве-и-ви-на-а-вина… Елисеевы братья бывшие.
+
+Неизвестный господин, притащивший пса к дверям своей роскошной квартиры, помещавшейся в бельэтаже, позвонил, а пес тотчас поднял глаза на большую, черную с золотыми буквами карточку, висящую сбоку широкой, застекленной волнистым и розовым стеклом двери. Три первых буквы он сложил сразу: пэ-ер-о "про". Но дальше шла пузатая двубокая дрянь, неизвестно что означающая. "Неужто пролетарий"? Подумал Шарик с удивлением… "Быть этого не может". Он поднял нос кверху, еще раз обнюхал шубу и уверенно подумал:</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.post" pk="21">
+    <field name="author" rel="ManyToOneRel" to="news.author">1</field>
+    <field name="categoryType" type="CharField">NW</field>
+    <field name="dateCreation" type="DateTimeField">2024-03-29T12:58:11.688780+00:00</field>
+    <field name="title" type="CharField">nest</field>
+    <field name="text" type="TextField">Еще шире распахнулась дверь и ворвалась еще одна личность мужского пола в халате. Давя битые стекла, она кинулась не ко псу, а к шкафу, раскрыла его и всю комнату наполнила сладким и тошным запахом. Затем личность навалилась на пса сверху животом, причем пес с увлечением тяпнул ее повыше шнурков на ботинке. Личность охнула, но не потерялась. Тошнотворная жидкость перехватила дыхание пса и в голове у него завертелось, потом ноги отвалились и он поехал куда-то криво вбок. Спасибо, кончено, — мечтательно подумал он, валясь прямо на острые стекла: — прощай, москва! Не видать мне больше чичкина и пролетариев и краковской колбасы. Иду в рай за собачье долготерпение. Братцы, живодеры, за что же вы меня?
+
+И тут он окончательно завалился на бок и издох.</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.postcategory" pk="1">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">1</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="2">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">1</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="3">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">2</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">3</field>
+  </object>
+  <object model="news.postcategory" pk="4">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">3</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">4</field>
+  </object>
+  <object model="news.postcategory" pk="5">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">3</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">2</field>
+  </object>
+  <object model="news.postcategory" pk="6">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">5</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">2</field>
+  </object>
+  <object model="news.postcategory" pk="7">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">6</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">3</field>
+  </object>
+  <object model="news.postcategory" pk="9">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">7</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="10">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">8</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="11">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">9</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="12">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">10</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="13">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">11</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="14">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">12</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="15">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">13</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="16">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">14</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="17">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">15</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="18">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">16</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="19">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">17</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="20">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">18</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="21">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">19</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="22">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">20</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.postcategory" pk="23">
+    <field name="postThrough" rel="ManyToOneRel" to="news.post">21</field>
+    <field name="categoryThrough" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.comment" pk="1">
+    <field name="commentPost" rel="ManyToOneRel" to="news.post">1</field>
+    <field name="commentUser" rel="ManyToOneRel" to="auth.user">1</field>
+    <field name="text" type="TextField">comment one</field>
+    <field name="dateCreation" type="DateTimeField">2024-02-21T09:33:19.469658+00:00</field>
+    <field name="rating" type="SmallIntegerField">3</field>
+  </object>
+  <object model="news.comment" pk="2">
+    <field name="commentPost" rel="ManyToOneRel" to="news.post">1</field>
+    <field name="commentUser" rel="ManyToOneRel" to="auth.user">3</field>
+    <field name="text" type="TextField">comment two</field>
+    <field name="dateCreation" type="DateTimeField">2024-02-21T09:34:44.198987+00:00</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.comment" pk="3">
+    <field name="commentPost" rel="ManyToOneRel" to="news.post">2</field>
+    <field name="commentUser" rel="ManyToOneRel" to="auth.user">4</field>
+    <field name="text" type="TextField">comment three</field>
+    <field name="dateCreation" type="DateTimeField">2024-02-21T09:38:15.543590+00:00</field>
+    <field name="rating" type="SmallIntegerField">0</field>
+  </object>
+  <object model="news.comment" pk="4">
+    <field name="commentPost" rel="ManyToOneRel" to="news.post">3</field>
+    <field name="commentUser" rel="ManyToOneRel" to="auth.user">2</field>
+    <field name="text" type="TextField">comment four</field>
+    <field name="dateCreation" type="DateTimeField">2024-02-21T09:39:14.409304+00:00</field>
+    <field name="rating" type="SmallIntegerField">-1</field>
+  </object>
+  <object model="news.subscriber" pk="1">
+    <field name="user" rel="ManyToOneRel" to="auth.user">7</field>
+    <field name="category" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.subscriber" pk="2">
+    <field name="user" rel="ManyToOneRel" to="auth.user">7</field>
+    <field name="category" rel="ManyToOneRel" to="news.category">2</field>
+  </object>
+  <object model="news.subscriber" pk="3">
+    <field name="user" rel="ManyToOneRel" to="auth.user">9</field>
+    <field name="category" rel="ManyToOneRel" to="news.category">1</field>
+  </object>
+  <object model="news.subscriber" pk="4">
+    <field name="user" rel="ManyToOneRel" to="auth.user">9</field>
+    <field name="category" rel="ManyToOneRel" to="news.category">3</field>
+  </object>
+</django-objects>

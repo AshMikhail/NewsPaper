@@ -1,0 +1,2 @@
+[2024-05-09 13:31:13,740 - INFO - /Users/mikeash/NewsPaper/venv/lib/python3.12/site-packages/django/core/servers/basehttp.py - None - "GET /news/?page=5 HTTP/1.1" 200 3188]
+[2024-05-09 13:31:15,236 - INFO - /Users/mikeash/NewsPaper/venv/lib/python3.12/site-packages/django/core/servers/basehttp.py - None - "GET /news/?page=1 HTTP/1.1" 200 5260]
